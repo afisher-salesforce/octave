@@ -410,6 +410,36 @@ window.OCTAVE_PAGES = {
     meta: ["Highlighting: capabilities directly used in Vignettes 1-5", "Grouping: aligned to Salesforce capability domains"],
     sections: [
       {
+        title: "Domain Inclusion Logic",
+        bullets: [
+          "This page intentionally focuses on domains with direct impact on the Octave executive storyline and 90-day pilot outcomes.",
+          "Included domains are those required to improve cross-sell execution, forecast reliability, methodology adoption, and executive measurement.",
+          "Domains not shown in the primary map are not low-value; they are simply not on the critical path for the initial Agentforce for Sales motion."
+        ],
+        chips: [
+          "In Scope: Direct blocker impact",
+          "Adjacent: Valuable but not pilot-critical",
+          "Future: Sequence after pilot proof"
+        ],
+        cards: [
+          {
+            kicker: "Included Now",
+            title: "Directly Impacted Domains",
+            body: "Analytics & Reporting, Sales, Data & AI, Integration, Collaboration, and Platform & Governance are shown because they contain the core capabilities used across Vignettes 1-5."
+          },
+          {
+            kicker: "Deferred Scope",
+            title: "Adjacent Domains",
+            body: "Billing, CPQ, Field Service, Industry Solutions, Marketing, Order, Partner, and Service can be sequenced later as the program expands beyond the first executive use cases."
+          },
+          {
+            kicker: "Coverage Legend",
+            title: "How To Explain Scope In The Room",
+            body: "In Scope domains are mapped to named blockers and pilot KPIs. Adjacent domains are acknowledged as follow-on value streams. Future domains are addressed after pilot evidence supports scale."
+          }
+        ]
+      },
+      {
         title: "Salesforce Capability Map by Domain",
         domainGroups: [
           {
@@ -472,7 +502,8 @@ window.OCTAVE_PAGES = {
         bullets: [
           "Highlighted capabilities are directly referenced inside one or more Octave vignettes.",
           "Non-highlighted capabilities are adjacent enablers that can be sequenced as the program matures.",
-          "Domain grouping helps leadership evaluate both quick wins and long-term architecture alignment."
+          "Domain grouping helps leadership evaluate both quick wins and long-term architecture alignment.",
+          "If asked why all Salesforce domains are not shown: this is a deliberate executive scope cut to keep attention on capabilities that move the three named blockers in the next 90 days."
         ]
       }
     ]
