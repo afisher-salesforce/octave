@@ -40,7 +40,7 @@ function renderPage(pageKey) {
 
   document.title = page.title;
   const content = document.getElementById("content");
-  const heroClass = page.showHero ? "hero" : "hero hero-compact";
+  const heroClass = page.showHero ? "hero hero--with-image" : "hero hero-compact";
   const hero = `
     <header class="${heroClass}">
       <div class="hero-inner page-wrap">
