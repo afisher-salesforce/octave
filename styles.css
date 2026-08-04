@@ -99,6 +99,13 @@ body {
     url("./assets/hero.jpg") center/cover no-repeat;
 }
 
+.hero-compact {
+  min-height: 150px;
+  background:
+    linear-gradient(180deg, rgba(7, 10, 18, 0.9) 0%, rgba(7, 10, 18, 0.75) 100%),
+    linear-gradient(90deg, rgba(69, 198, 255, 0.08), rgba(154, 107, 255, 0.08));
+}
+
 .hero-inner {
   padding: 40px;
 }
@@ -115,6 +122,23 @@ h1 {
   max-width: 780px;
 }
 
+.meta-row {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meta-pill {
+  border: 1px solid #2f4d76;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+  color: #bdd4f5;
+  background: rgba(22, 37, 62, 0.85);
+}
+
 .section {
   margin: 22px 24px;
   border: 1px solid var(--border);
@@ -126,6 +150,11 @@ h1 {
 .section h2 {
   margin: 0 0 12px;
   font-size: 1.2rem;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
 }
 
 ul {
@@ -140,6 +169,107 @@ li {
 
 .muted {
   color: var(--muted);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card-item,
+.cap-card {
+  border: 1px solid #2a4066;
+  border-radius: 10px;
+  padding: 12px;
+  background: #122034;
+}
+
+.card-kicker {
+  margin: 0 0 8px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7ecfff;
+}
+
+.card-item p,
+.cap-card p {
+  margin: 0;
+  color: #c7d8f1;
+  font-size: 0.92rem;
+  line-height: 1.35rem;
+}
+
+.cap-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cap-code {
+  font-size: 0.72rem;
+  border: 1px solid #2c5e92;
+  color: #8bd8ff;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: #113154;
+}
+
+.cap-domain {
+  margin-bottom: 6px !important;
+  color: #84b9ea !important;
+  font-size: 0.76rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.phase-block {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #2a3c5a;
+}
+
+.phase-block:first-of-type {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.domain-card {
+  border: 1px solid #294161;
+  border-radius: 10px;
+  background: #111f31;
+  padding: 12px;
+}
+
+.cap-pill-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cap-pill {
+  font-size: 0.78rem;
+  border: 1px solid #345071;
+  background: #17273e;
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: #c4d9f3;
+}
+
+.cap-pill.highlight {
+  border-color: #45c6ff;
+  background: #10364e;
+  color: #d5f0ff;
 }
 
 .chips {
