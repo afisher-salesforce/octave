@@ -40,8 +40,9 @@ function renderPage(pageKey) {
 
   document.title = page.title;
   const content = document.getElementById("content");
+  const heroImageClass = pageKey === "executive" ? " hero--with-image" : "";
   const hero = `
-    <header class="hero">
+    <header class="hero${heroImageClass}">
       <div class="hero-inner page-wrap">
         <h1>${page.title}</h1>
         ${page.headline ? `<p class="headline">${page.headline}</p>` : ""}
