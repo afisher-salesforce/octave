@@ -49,7 +49,9 @@ function installSidebarBranding() {
     footer.className = "nav-footer";
     footer.innerHTML = `
       <p class="nav-footer-label">Powered by</p>
-      <img src="assets/salesforce-logo.svg" alt="Salesforce" class="salesforce-logo" />
+      <div class="salesforce-logo-wrap">
+        <img src="assets/salesforce-logo.svg" alt="Salesforce" class="salesforce-logo" />
+      </div>
     `;
     sidebar.appendChild(footer);
   }
