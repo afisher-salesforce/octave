@@ -99,10 +99,12 @@ function installNavTools(currentHref) {
   const tools = document.createElement("div");
   tools.id = "nav-tools";
   tools.innerHTML = `
-    <button id="toggle-nav" class="nav-toggle" type="button" aria-expanded="true">Hide Navigation</button>
-    <label class="search-label" for="capability-search">Capability Search</label>
-    <input id="capability-search" class="search-input" type="search" placeholder="Search code, name, description, location" />
-    <div id="search-results" class="search-results"></div>
+    <section class="nav-group nav-group-search">
+      <p class="nav-label">Search</p>
+      <label class="search-label" for="capability-search">Capability Search</label>
+      <input id="capability-search" class="search-input" type="search" placeholder="Search code, name, description, location" />
+      <div id="search-results" class="search-results"></div>
+    </section>
   `;
 
   const nav = document.getElementById("sidebar-nav");
@@ -110,13 +112,10 @@ function installNavTools(currentHref) {
 
   const body = document.body;
   const collapseKey = "octave-nav-collapsed";
-  const toggleButton = document.getElementById("toggle-nav");
   const globalToggle = document.getElementById("global-nav-toggle");
 
   function syncButtons(isCollapsed) {
     const label = isCollapsed ? "Show Navigation" : "Hide Navigation";
-    toggleButton.textContent = label;
-    toggleButton.setAttribute("aria-expanded", String(!isCollapsed));
     if (globalToggle) {
       globalToggle.textContent = label;
       globalToggle.setAttribute("aria-expanded", String(!isCollapsed));
@@ -126,12 +125,6 @@ function installNavTools(currentHref) {
   const collapsed = localStorage.getItem(collapseKey) === "true";
   if (collapsed) body.classList.add("nav-collapsed");
   syncButtons(collapsed);
-
-  toggleButton.addEventListener("click", () => {
-    const isCollapsed = body.classList.toggle("nav-collapsed");
-    localStorage.setItem(collapseKey, String(isCollapsed));
-    syncButtons(isCollapsed);
-  });
 
   if (globalToggle) {
     globalToggle.addEventListener("click", () => {
