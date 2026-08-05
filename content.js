@@ -1,11 +1,11 @@
 window.OCTAVE_NAV = [
-  { title: "Connected Customer Vision", href: "index.html", group: "Overview" },
+  { title: "Executive Summary", href: "index.html", group: "Overview" },
   { title: "Journey", href: "journey.html", group: "Overview" },
-  { title: "The Coworker Moment — What Does This Customer Actually Own?", href: "vignette-1.html", group: "Vignettes" },
-  { title: "The Methodology That Fills Itself In", href: "vignette-2.html", group: "Vignettes" },
-  { title: "The Deal That Showed Its Hand Early", href: "vignette-3.html", group: "Vignettes" },
-  { title: "The Cross-Sell Motion That Found Itself", href: "vignette-4.html", group: "Vignettes" },
-  { title: "Proving It Worked — The CRO Scorecard", href: "vignette-5.html", group: "Vignettes" },
+  { title: "1. The Coworker Moment — What Does This Customer Actually Own?", href: "vignette-1.html", group: "Vignettes" },
+  { title: "2. The Methodology That Fills Itself In", href: "vignette-2.html", group: "Vignettes" },
+  { title: "3. The Deal That Showed Its Hand Early", href: "vignette-3.html", group: "Vignettes" },
+  { title: "4. The Cross-Sell Motion That Found Itself", href: "vignette-4.html", group: "Vignettes" },
+  { title: "5. Proving It Worked — The CRO Scorecard", href: "vignette-5.html", group: "Vignettes" },
   { title: "Capability Map", href: "capability-map.html", group: "Architecture" },
   { title: "Salesforce Domain Summary", href: "salesforce-summary.html", group: "Architecture" },
   { title: "External Research", href: "external-research.html", group: "Appendix" },
@@ -14,7 +14,7 @@ window.OCTAVE_NAV = [
 
 window.OCTAVE_PAGES = {
   executive: {
-    title: "Connected Customer Vision | Octave",
+    title: "Executive Summary | Octave",
     showHero: true,
     headline: "A board-relevant growth conversation linking seller behavior, AI-assisted execution, and measurable ARR outcomes.",
     meta: [
@@ -170,7 +170,7 @@ window.OCTAVE_PAGES = {
     ]
   },
   v1: {
-    title: "Vignette 1 | The Coworker Moment",
+    title: "1. The Coworker Moment — What Does This Customer Actually Own?",
     showHero: false,
     headline: "From tribal knowledge to account truth in seconds.",
     meta: ["Primary Persona: Account Executive", "Executive Concern: Visibility", "Time to Value: Immediate"],
@@ -217,7 +217,7 @@ window.OCTAVE_PAGES = {
     ]
   },
   v2: {
-    title: "Vignette 2 | The Methodology That Fills Itself In",
+    title: "2. The Methodology That Fills Itself In",
     showHero: false,
     headline: "Methodology discipline without seller tax.",
     meta: ["Primary Persona: Sales Enablement", "Executive Concern: Adoption", "Time to Value: 1-2 weeks"],
@@ -264,7 +264,7 @@ window.OCTAVE_PAGES = {
     ]
   },
   v3: {
-    title: "Vignette 3 | The Deal That Showed Its Hand Early",
+    title: "3. The Deal That Showed Its Hand Early",
     showHero: false,
     headline: "Forecast risk surfaced before it becomes a quarter-end surprise.",
     meta: ["Primary Persona: Frontline Manager", "Executive Concern: Forecast Confidence", "Time to Value: 2-3 weeks"],
@@ -311,7 +311,7 @@ window.OCTAVE_PAGES = {
     ]
   },
   v4: {
-    title: "Vignette 4 | The Cross-Sell Motion That Found Itself",
+    title: "4. The Cross-Sell Motion That Found Itself",
     showHero: false,
     headline: "From whitespace hypothesis to repeatable cross-portfolio motion.",
     meta: ["Primary Persona: CRO / RevOps", "Executive Concern: Cross-Sell Throughput", "Time to Value: 4-8 weeks"],
@@ -358,7 +358,7 @@ window.OCTAVE_PAGES = {
     ]
   },
   v5: {
-    title: "Vignette 5 | Proving It Worked: The CRO Scorecard",
+    title: "5. Proving It Worked — The CRO Scorecard",
     showHero: false,
     headline: "Executive scorecard that turns internal proof points into scale decisions.",
     meta: ["Primary Persona: CRO", "Executive Concern: Board-Ready Evidence", "Time to Value: 8-12 weeks"],
