@@ -164,19 +164,20 @@ body {
   margin: 4px 0 0;
 }
 
-.floating-nav-toggle {
-  display: none;
+.global-nav-toggle {
+  display: block;
   position: fixed;
   top: 14px;
   left: 14px;
-  z-index: 99;
+  z-index: 120;
   border: 1px solid #35527c;
   background: #13243b;
   color: #d4e7ff;
   border-radius: 8px;
-  padding: 7px 10px;
+  padding: 7px 11px;
   font-size: 0.78rem;
   cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 .content {
@@ -428,7 +429,8 @@ li {
     margin: 16px;
   }
 
-  .floating-nav-toggle {
-    display: block;
+  .global-nav-toggle {
+    top: 10px;
+    left: 10px;
   }
 }

@@ -87,13 +87,13 @@ function installNavTools(currentHref) {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar || document.getElementById("nav-tools")) return;
 
-  if (!document.getElementById("floating-nav-toggle")) {
-    const floating = document.createElement("button");
-    floating.id = "floating-nav-toggle";
-    floating.className = "floating-nav-toggle";
-    floating.type = "button";
-    floating.textContent = "Show Navigation";
-    document.body.appendChild(floating);
+  if (!document.getElementById("global-nav-toggle")) {
+    const globalToggle = document.createElement("button");
+    globalToggle.id = "global-nav-toggle";
+    globalToggle.className = "global-nav-toggle";
+    globalToggle.type = "button";
+    globalToggle.textContent = "Hide Navigation";
+    document.body.appendChild(globalToggle);
   }
 
   const tools = document.createElement("div");
@@ -111,12 +111,16 @@ function installNavTools(currentHref) {
   const body = document.body;
   const collapseKey = "octave-nav-collapsed";
   const toggleButton = document.getElementById("toggle-nav");
-  const floatingToggle = document.getElementById("floating-nav-toggle");
+  const globalToggle = document.getElementById("global-nav-toggle");
 
   function syncButtons(isCollapsed) {
-    toggleButton.textContent = isCollapsed ? "Show Navigation" : "Hide Navigation";
+    const label = isCollapsed ? "Show Navigation" : "Hide Navigation";
+    toggleButton.textContent = label;
     toggleButton.setAttribute("aria-expanded", String(!isCollapsed));
-    if (floatingToggle) floatingToggle.style.display = isCollapsed ? "block" : "none";
+    if (globalToggle) {
+      globalToggle.textContent = label;
+      globalToggle.setAttribute("aria-expanded", String(!isCollapsed));
+    }
   }
 
   const collapsed = localStorage.getItem(collapseKey) === "true";
@@ -129,11 +133,11 @@ function installNavTools(currentHref) {
     syncButtons(isCollapsed);
   });
 
-  if (floatingToggle) {
-    floatingToggle.addEventListener("click", () => {
-      body.classList.remove("nav-collapsed");
-      localStorage.setItem(collapseKey, "false");
-      syncButtons(false);
+  if (globalToggle) {
+    globalToggle.addEventListener("click", () => {
+      const isCollapsed = body.classList.toggle("nav-collapsed");
+      localStorage.setItem(collapseKey, String(isCollapsed));
+      syncButtons(isCollapsed);
     });
   }
 
