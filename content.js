@@ -1,18 +1,20 @@
 window.OCTAVE_NAV = [
-  { title: "Executive Summary", href: "index.html", group: "Overview" },
-  { title: "External Research", href: "external-research.html", group: "Overview" },
-  { title: "Vignette 1: Coworker Moment", href: "vignette-1.html", group: "Vignettes" },
-  { title: "Vignette 2: Methodology Auto-Fill", href: "vignette-2.html", group: "Vignettes" },
-  { title: "Vignette 3: Deal Risk Visibility", href: "vignette-3.html", group: "Vignettes" },
-  { title: "Vignette 4: Cross-Sell Motion", href: "vignette-4.html", group: "Vignettes" },
-  { title: "Vignette 5: CRO Scorecard", href: "vignette-5.html", group: "Vignettes" },
+  { title: "Connected Customer Vision", href: "index.html", group: "Overview" },
+  { title: "Journey", href: "journey.html", group: "Overview" },
+  { title: "The Coworker Moment — What Does This Customer Actually Own?", href: "vignette-1.html", group: "Vignettes" },
+  { title: "The Methodology That Fills Itself In", href: "vignette-2.html", group: "Vignettes" },
+  { title: "The Deal That Showed Its Hand Early", href: "vignette-3.html", group: "Vignettes" },
+  { title: "The Cross-Sell Motion That Found Itself", href: "vignette-4.html", group: "Vignettes" },
+  { title: "Proving It Worked — The CRO Scorecard", href: "vignette-5.html", group: "Vignettes" },
   { title: "Capability Map", href: "capability-map.html", group: "Architecture" },
-  { title: "Salesforce Domain Summary", href: "salesforce-summary.html", group: "Architecture" }
+  { title: "Salesforce Domain Summary", href: "salesforce-summary.html", group: "Architecture" },
+  { title: "External Research", href: "external-research.html", group: "Appendix" },
+  { title: "Forward Looking Statement", href: "forward-looking-statement.html", group: "Appendix" }
 ];
 
 window.OCTAVE_PAGES = {
   executive: {
-    title: "Agentforce for Sales | Octave Executive Briefing",
+    title: "Connected Customer Vision | Octave",
     showHero: true,
     headline: "A board-relevant growth conversation linking seller behavior, AI-assisted execution, and measurable ARR outcomes.",
     meta: [
@@ -69,6 +71,56 @@ window.OCTAVE_PAGES = {
           "Choose initial pilot division and seller cohort.",
           "Agree on primary KPIs: slippage delta, win-rate lift, SPICED completion quality, and cross-sell pipeline creation.",
           "Confirm leadership sponsor model and weekly operating cadence for 90 days."
+        ]
+      }
+    ]
+  },
+  journey: {
+    title: "Journey | Connected Customer Vision",
+    showHero: false,
+    headline: "Visual transformation journey connecting current-state friction to future-state operating model outcomes.",
+    meta: [
+      "Use: Executive alignment artifact",
+      "Format: Customer-supplied visual map(s)",
+      "Intent: Shared reference point for decision sequencing"
+    ],
+    sections: [
+      {
+        title: "Journey Framing",
+        bullets: [
+          "This page is reserved for the customer-specific transformation journey visual used in the executive conversation.",
+          "The journey should show the progression from fragmented seller execution to connected, AI-assisted operating rhythm.",
+          "Use this view to align scope, sequence, ownership, and measurable outcomes across business and technology stakeholders."
+        ],
+        imagePath: "assets/journey-ccv-octave.png",
+        imageAlt: "Connected Customer Vision journey for Octave"
+      },
+      {
+        title: "How To Use In The Meeting",
+        cards: [
+          {
+            kicker: "Step 1",
+            title: "Anchor Current State",
+            body: "Identify where sellers and managers lose decision velocity today (visibility gaps, manual prep, delayed risk signals)."
+          },
+          {
+            kicker: "Step 2",
+            title: "Connect To Vignettes",
+            body: "Map each vignette as a practical future-state moment on the journey so each page ties to a real operating shift."
+          },
+          {
+            kicker: "Step 3",
+            title: "Sequence Decisions",
+            body: "Use the journey to confirm phase gates, sponsors, and outcomes before entering detailed implementation planning."
+          }
+        ]
+      },
+      {
+        title: "Asset Placement Guidance",
+        bullets: [
+          "Place customer journey visual(s) in the `assets` folder and reference them here for full-width readability.",
+          "Keep this page lightweight so visuals remain the focal point during executive sessions.",
+          "Avoid embedding confidential numbers in reusable templates; keep sensitive figures in protected customer-specific variants."
         ]
       }
     ]
@@ -504,6 +556,30 @@ window.OCTAVE_PAGES = {
           "Non-highlighted capabilities are adjacent enablers that can be sequenced as the program matures.",
           "Domain grouping helps leadership evaluate both quick wins and long-term architecture alignment.",
           "If asked why all Salesforce domains are not shown: this is a deliberate executive scope cut to keep attention on capabilities that move the three named blockers in the next 90 days."
+        ]
+      }
+    ]
+  },
+  fls: {
+    title: "Forward Looking Statement",
+    showHero: false,
+    headline: "Standardized cautionary language for strategic planning discussions.",
+    meta: ["Appendix", "Legal boundary", "Use in executive review materials"],
+    sections: [
+      {
+        title: "Forward Looking Statement",
+        bullets: [
+          "This content includes forward-looking statements and strategic assumptions for planning purposes only.",
+          "Forward-looking statements are based on current expectations and involve risks and uncertainties that may cause actual outcomes to differ materially.",
+          "No commitment is made to deliver any specific product capability, timing, or commercial result unless explicitly stated in an executed agreement."
+        ]
+      },
+      {
+        title: "Discussion Boundary",
+        bullets: [
+          "Use this site to guide executive alignment, sequencing, and pilot decisions.",
+          "Do not interpret scenario language, sample metrics, or roadmap framing as contractual commitments.",
+          "All investment and delivery decisions should follow formal governance, procurement, and legal review processes."
         ]
       }
     ]

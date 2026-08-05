@@ -10,7 +10,7 @@ function groupBy(items, key) {
 function renderNav(currentHref) {
   const sidebar = document.getElementById("sidebar-nav");
   const grouped = groupBy(window.OCTAVE_NAV, "group");
-  const groupOrder = ["Overview", "Vignettes", "Architecture"];
+  const groupOrder = ["Overview", "Vignettes", "Architecture", "Appendix"];
 
   const html = groupOrder
     .map((groupName) => {
@@ -32,6 +32,148 @@ function renderNav(currentHref) {
     .join("");
 
   sidebar.innerHTML = html;
+}
+
+function pageHrefForKey(pageKey) {
+  const entry = window.OCTAVE_NAV.find((item) => item.href === "index.html" && pageKey === "executive");
+  if (entry) return "index.html";
+  const pageMap = {
+    journey: "journey.html",
+    research: "external-research.html",
+    v1: "vignette-1.html",
+    v2: "vignette-2.html",
+    v3: "vignette-3.html",
+    v4: "vignette-4.html",
+    v5: "vignette-5.html",
+    capability: "capability-map.html",
+    salesforce: "salesforce-summary.html",
+    fls: "forward-looking-statement.html"
+  };
+  return pageMap[pageKey] || "index.html";
+}
+
+function buildCapabilityIndex() {
+  const entries = [];
+  Object.entries(window.OCTAVE_PAGES).forEach(([pageKey, page]) => {
+    const pageHref = pageHrefForKey(pageKey);
+    const pageTitle = page.title;
+    (page.sections || []).forEach((section) => {
+      (section.capabilities || []).forEach((cap) => {
+        entries.push({
+          code: cap.code || "",
+          name: cap.name || "",
+          description: cap.body || "",
+          location: `${pageTitle} — ${section.title}`,
+          href: pageHref
+        });
+      });
+      (section.domainGroups || []).forEach((group) => {
+        (group.capabilities || []).forEach((cap) => {
+          entries.push({
+            code: cap.code || "",
+            name: cap.name || "",
+            description: `${group.title} domain capability`,
+            location: `${pageTitle} — ${group.title}`,
+            href: pageHref
+          });
+        });
+      });
+    });
+  });
+  return entries;
+}
+
+function installNavTools(currentHref) {
+  const sidebar = document.querySelector(".sidebar");
+  if (!sidebar || document.getElementById("nav-tools")) return;
+
+  if (!document.getElementById("floating-nav-toggle")) {
+    const floating = document.createElement("button");
+    floating.id = "floating-nav-toggle";
+    floating.className = "floating-nav-toggle";
+    floating.type = "button";
+    floating.textContent = "Show Navigation";
+    document.body.appendChild(floating);
+  }
+
+  const tools = document.createElement("div");
+  tools.id = "nav-tools";
+  tools.innerHTML = `
+    <button id="toggle-nav" class="nav-toggle" type="button" aria-expanded="true">Hide Navigation</button>
+    <label class="search-label" for="capability-search">Capability Search</label>
+    <input id="capability-search" class="search-input" type="search" placeholder="Search code, name, description, location" />
+    <div id="search-results" class="search-results"></div>
+  `;
+
+  const nav = document.getElementById("sidebar-nav");
+  nav.before(tools);
+
+  const body = document.body;
+  const collapseKey = "octave-nav-collapsed";
+  const toggleButton = document.getElementById("toggle-nav");
+  const floatingToggle = document.getElementById("floating-nav-toggle");
+
+  function syncButtons(isCollapsed) {
+    toggleButton.textContent = isCollapsed ? "Show Navigation" : "Hide Navigation";
+    toggleButton.setAttribute("aria-expanded", String(!isCollapsed));
+    if (floatingToggle) floatingToggle.style.display = isCollapsed ? "block" : "none";
+  }
+
+  const collapsed = localStorage.getItem(collapseKey) === "true";
+  if (collapsed) body.classList.add("nav-collapsed");
+  syncButtons(collapsed);
+
+  toggleButton.addEventListener("click", () => {
+    const isCollapsed = body.classList.toggle("nav-collapsed");
+    localStorage.setItem(collapseKey, String(isCollapsed));
+    syncButtons(isCollapsed);
+  });
+
+  if (floatingToggle) {
+    floatingToggle.addEventListener("click", () => {
+      body.classList.remove("nav-collapsed");
+      localStorage.setItem(collapseKey, "false");
+      syncButtons(false);
+    });
+  }
+
+  const index = buildCapabilityIndex();
+  const input = document.getElementById("capability-search");
+  const results = document.getElementById("search-results");
+
+  function renderResults(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      results.innerHTML = "";
+      return;
+    }
+    const matches = index.filter((item) => {
+      return (
+        item.code.toLowerCase().includes(q) ||
+        item.name.toLowerCase().includes(q) ||
+        item.description.toLowerCase().includes(q) ||
+        item.location.toLowerCase().includes(q)
+      );
+    }).slice(0, 8);
+
+    if (!matches.length) {
+      results.innerHTML = `<p class="search-empty">No matching capabilities</p>`;
+      return;
+    }
+
+    results.innerHTML = matches.map((match) => {
+      const active = currentHref === match.href ? "active" : "";
+      return `
+        <a class="search-result ${active}" href="${match.href}">
+          <span class="result-code">${match.code}</span>
+          <span class="result-name">${match.name}</span>
+          <span class="result-location">${match.location}</span>
+        </a>
+      `;
+    }).join("");
+  }
+
+  input.addEventListener("input", (event) => renderResults(event.target.value));
 }
 
 function renderPage(pageKey) {
@@ -135,6 +277,15 @@ function renderPage(pageKey) {
     `;
   }
 
+  function renderImage(section) {
+    if (!section.imagePath) return "";
+    return `
+      <figure class="journey-figure">
+        <img src="${section.imagePath}" alt="${section.imageAlt || "Journey visual"}" class="journey-image" />
+      </figure>
+    `;
+  }
+
   const sections = page.sections
     .map((section) => {
       const chips = section.chips && section.chips.length
@@ -152,6 +303,7 @@ function renderPage(pageKey) {
           <h2>${section.title}</h2>
           ${bullets}
           ${renderCards(section.cards)}
+          ${renderImage(section)}
           ${renderCapabilityCards(section.capabilities)}
           ${renderPhases(section.phases)}
           ${renderDomainGroups(section.domainGroups)}
@@ -175,6 +327,7 @@ function renderPage(pageKey) {
 function init() {
   const currentFile = window.location.pathname.split("/").pop() || "index.html";
   const pageKey = document.body.getAttribute("data-page");
+  installNavTools(currentFile);
   renderNav(currentFile);
   renderPage(pageKey);
 }

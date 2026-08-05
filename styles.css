@@ -36,6 +36,14 @@ body {
   overflow-y: auto;
 }
 
+.nav-collapsed .app {
+  grid-template-columns: 1fr;
+}
+
+.nav-collapsed .sidebar {
+  display: none;
+}
+
 .brand {
   font-size: 1.3rem;
   font-weight: 700;
@@ -76,6 +84,99 @@ body {
 .nav-link.active {
   background: #16233a;
   border-color: #2d446f;
+}
+
+#nav-tools {
+  margin-bottom: 14px;
+}
+
+.nav-toggle {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #35527c;
+  background: #13243b;
+  color: #d4e7ff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.search-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+}
+
+.search-input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #2d446f;
+  background: #0f1c30;
+  color: var(--text);
+  padding: 9px 10px;
+  font-size: 0.84rem;
+}
+
+.search-results {
+  margin-top: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.search-result {
+  border: 1px solid #2d446f;
+  background: #112136;
+  border-radius: 8px;
+  padding: 7px 8px;
+  text-decoration: none;
+  display: grid;
+  gap: 2px;
+}
+
+.search-result.active,
+.search-result:hover {
+  border-color: #45c6ff;
+}
+
+.result-code {
+  color: #7fd8ff;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.result-name {
+  color: #dfebfc;
+  font-size: 0.82rem;
+}
+
+.result-location {
+  color: #9bb1d0;
+  font-size: 0.72rem;
+}
+
+.search-empty {
+  color: #9bb1d0;
+  font-size: 0.76rem;
+  margin: 4px 0 0;
+}
+
+.floating-nav-toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 99;
+  border: 1px solid #35527c;
+  background: #13243b;
+  color: #d4e7ff;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 0.78rem;
+  cursor: pointer;
 }
 
 .content {
@@ -276,6 +377,21 @@ li {
   color: #d5f0ff;
 }
 
+.journey-figure {
+  margin: 14px 0 0;
+  border: 1px solid #2b4468;
+  border-radius: 12px;
+  background: #0f1b2d;
+  padding: 10px;
+}
+
+.journey-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -310,5 +426,9 @@ li {
 
   .section {
     margin: 16px;
+  }
+
+  .floating-nav-toggle {
+    display: block;
   }
 }
