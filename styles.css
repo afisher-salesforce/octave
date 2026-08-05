@@ -217,8 +217,8 @@ body {
 }
 
 .page-wrap {
-  max-width: 1080px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0 24px;
 }
 
 .hero {
