@@ -34,6 +34,27 @@ function renderNav(currentHref) {
   sidebar.innerHTML = html;
 }
 
+function installSidebarBranding() {
+  const sidebar = document.querySelector(".sidebar");
+  if (!sidebar) return;
+
+  const brand = sidebar.querySelector(".brand");
+  if (brand) {
+    brand.textContent = "Octave";
+  }
+
+  let footer = sidebar.querySelector(".nav-footer");
+  if (!footer) {
+    footer = document.createElement("div");
+    footer.className = "nav-footer";
+    footer.innerHTML = `
+      <p class="nav-footer-label">Powered by</p>
+      <img src="assets/salesforce-logo.svg" alt="Salesforce" class="salesforce-logo" />
+    `;
+    sidebar.appendChild(footer);
+  }
+}
+
 function pageHrefForKey(pageKey) {
   const entry = window.OCTAVE_NAV.find((item) => item.href === "index.html" && pageKey === "executive");
   if (entry) return "index.html";
@@ -324,6 +345,7 @@ function renderPage(pageKey) {
 function init() {
   const currentFile = window.location.pathname.split("/").pop() || "index.html";
   const pageKey = document.body.getAttribute("data-page");
+  installSidebarBranding();
   installNavTools(currentFile);
   renderNav(currentFile);
   renderPage(pageKey);
