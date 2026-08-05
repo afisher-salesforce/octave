@@ -5,10 +5,12 @@ Static multi-page website for an executive discussion with Octave leadership on 
 ## Pages
 
 - `index.html` - Executive Summary
+- `journey.html` - Journey visual framing
 - `external-research.html` - External Research
 - `vignette-1.html` through `vignette-5.html` - Five vignettes
 - `capability-map.html` - Capability map and sequencing
 - `salesforce-summary.html` - Salesforce capability summary by domain
+- `forward-looking-statement.html` - Forward Looking Statement
 
 ## Local Preview
 
