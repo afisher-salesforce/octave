@@ -87,6 +87,8 @@ function buildCapabilityIndex() {
           name: cap.name || "",
           description: cap.body || "",
           location: `${pageTitle} — ${section.title}`,
+          pageTitle,
+          pageHref,
           href: pageHref
         });
       });
@@ -97,6 +99,8 @@ function buildCapabilityIndex() {
             name: cap.name || "",
             description: `${group.title} domain capability`,
             location: `${pageTitle} — ${group.title}`,
+            pageTitle,
+            pageHref,
             href: pageHref
           });
         });
@@ -125,8 +129,16 @@ function installNavTools(currentHref) {
     <section class="nav-group nav-group-search">
       <p class="nav-label">Search</p>
       <label class="search-label" for="capability-search">Capability Search</label>
-      <input id="capability-search" class="search-input" type="search" placeholder="Search code, name, description, location" />
-      <div id="search-results" class="search-results"></div>
+      <div class="search-shell">
+        <input id="capability-search" class="search-input" type="search" placeholder="Search code, name, description, location" />
+        <div id="search-popover" class="search-popover hidden" role="listbox" aria-label="Capability search results">
+          <div class="search-popover-head">
+            <span class="search-popover-title">Capability matches</span>
+            <button id="search-close" class="search-close" type="button" aria-label="Close search results">Close</button>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      </div>
     </section>
   `;
 
@@ -160,11 +172,26 @@ function installNavTools(currentHref) {
   const index = buildCapabilityIndex();
   const input = document.getElementById("capability-search");
   const results = document.getElementById("search-results");
+  const popover = document.getElementById("search-popover");
+  const closeButton = document.getElementById("search-close");
+  let selectedIndex = -1;
+  let currentMatches = [];
+
+  function showPopover() {
+    popover.classList.remove("hidden");
+  }
+
+  function hidePopover() {
+    popover.classList.add("hidden");
+    selectedIndex = -1;
+  }
 
   function renderResults(query) {
     const q = query.trim().toLowerCase();
     if (!q) {
       results.innerHTML = "";
+      currentMatches = [];
+      hidePopover();
       return;
     }
     const matches = index.filter((item) => {
@@ -175,9 +202,12 @@ function installNavTools(currentHref) {
         item.location.toLowerCase().includes(q)
       );
     }).slice(0, 8);
+    currentMatches = matches;
+    selectedIndex = matches.length ? 0 : -1;
 
     if (!matches.length) {
       results.innerHTML = `<p class="search-empty">No matching capabilities</p>`;
+      showPopover();
       return;
     }
 
@@ -191,9 +221,68 @@ function installNavTools(currentHref) {
         </a>
       `;
     }).join("");
+    highlightSelectedResult();
+    showPopover();
+  }
+
+  function highlightSelectedResult() {
+    const items = Array.from(results.querySelectorAll(".search-result"));
+    items.forEach((item, idx) => {
+      if (idx === selectedIndex) {
+        item.classList.add("kbd-active");
+      } else {
+        item.classList.remove("kbd-active");
+      }
+    });
+  }
+
+  function chooseMatch(match) {
+    if (!match) return;
+    input.value = `${match.code}: ${match.name}`;
+    hidePopover();
+    window.location.href = match.href;
   }
 
   input.addEventListener("input", (event) => renderResults(event.target.value));
+
+  input.addEventListener("focus", () => {
+    if (input.value.trim()) {
+      renderResults(input.value);
+    }
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      hidePopover();
+      return;
+    }
+    if (!currentMatches.length) return;
+
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      selectedIndex = (selectedIndex + 1) % currentMatches.length;
+      highlightSelectedResult();
+      return;
+    }
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      selectedIndex = (selectedIndex - 1 + currentMatches.length) % currentMatches.length;
+      highlightSelectedResult();
+      return;
+    }
+    if (event.key === "Enter") {
+      event.preventDefault();
+      chooseMatch(currentMatches[selectedIndex] || currentMatches[0]);
+    }
+  });
+
+  closeButton.addEventListener("click", () => hidePopover());
+
+  document.addEventListener("click", (event) => {
+    if (!tools.contains(event.target)) {
+      hidePopover();
+    }
+  });
 }
 
 function renderPage(pageKey) {

@@ -60,11 +60,12 @@ body {
 }
 
 .nav-group {
-  margin: 18px 0;
+  margin: 24px 0;
 }
 
 .nav-group-search {
   margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .nav-label {
@@ -72,24 +73,27 @@ body {
   text-transform: uppercase;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  margin: 0 0 8px;
+  margin: 0 0 12px;
 }
 
 .nav-link {
   display: block;
   color: var(--text);
   text-decoration: none;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 10px 12px;
-  margin-bottom: 6px;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  padding: 8px 8px 8px 12px;
+  margin-bottom: 4px;
   font-size: 0.92rem;
+  line-height: 1.25rem;
+  background: transparent;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  background: #16233a;
-  border-color: #2d446f;
+  background: rgba(22, 35, 58, 0.38);
+  border-left-color: #45c6ff;
+  font-weight: 600;
 }
 
 #nav-tools {
@@ -119,10 +123,58 @@ body {
   font-size: 0.92rem;
 }
 
+.search-shell {
+  position: relative;
+}
+
+.search-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: #101c2f;
+  border: 1px solid #2f486e;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  padding: 8px;
+}
+
+.search-popover.hidden {
+  display: none;
+}
+
+.search-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #2a4064;
+}
+
+.search-popover-title {
+  font-size: 0.74rem;
+  color: #9db5d5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.search-close {
+  border: 1px solid #37527a;
+  border-radius: 6px;
+  background: #172740;
+  color: #d7e8ff;
+  font-size: 0.72rem;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+
 .search-results {
-  margin-top: 8px;
   display: grid;
   gap: 6px;
+  max-height: 260px;
+  overflow-y: auto;
 }
 
 .search-result {
@@ -138,6 +190,11 @@ body {
 .search-result.active,
 .search-result:hover {
   border-color: #45c6ff;
+}
+
+.search-result.kbd-active {
+  border-color: #45c6ff;
+  background: #17324d;
 }
 
 .result-code {
