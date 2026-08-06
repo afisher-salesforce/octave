@@ -7,6 +7,8 @@
   --border: #24334f;
   --accent: #45c6ff;
   --accent-2: #9a6bff;
+  --sidebar-width: 375px;
+  --nav-toggle-gap: 15px;
 }
 
 * {
@@ -22,7 +24,7 @@ body {
 
 .app {
   display: grid;
-  grid-template-columns: 375px 1fr;
+  grid-template-columns: var(--sidebar-width) 1fr;
   min-height: 100vh;
 }
 
@@ -231,7 +233,7 @@ body {
   display: block;
   position: fixed;
   top: 14px;
-  left: 390px;
+  left: calc(var(--sidebar-width) + var(--nav-toggle-gap));
   z-index: 120;
   border: 1px solid #35527c;
   background: #13243b;
@@ -495,6 +497,28 @@ li {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 6px;
+}
+
+.page-flow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.page-flow-link {
+  text-decoration: none;
+  color: #d8e9ff;
+  border: 1px solid #335177;
+  background: #13243b;
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 0.82rem;
+}
+
+.page-flow-link:hover {
+  border-color: #45c6ff;
+  background: #17324d;
 }
 
 .chip {

@@ -75,6 +75,27 @@ function pageHrefForKey(pageKey) {
   return pageMap[pageKey] || "index.html";
 }
 
+function renderPageFlow(currentHref) {
+  const ordered = window.OCTAVE_NAV.map((item) => item.href);
+  const index = ordered.indexOf(currentHref);
+  if (index === -1) return "";
+
+  const previous = index > 0 ? window.OCTAVE_NAV[index - 1] : null;
+  const next = index < window.OCTAVE_NAV.length - 1 ? window.OCTAVE_NAV[index + 1] : null;
+  if (!previous && !next) return "";
+
+  return `
+    <nav class="page-flow" aria-label="Page flow">
+      ${
+        previous
+          ? `<a class="page-flow-link" href="${previous.href}">Previous: ${previous.title}</a>`
+          : `<span></span>`
+      }
+      ${next ? `<a class="page-flow-link" href="${next.href}">Next: ${next.title}</a>` : `<span></span>`}
+    </nav>
+  `;
+}
+
 function buildCapabilityIndex() {
   const entries = [];
   Object.entries(window.OCTAVE_PAGES).forEach(([pageKey, page]) => {
@@ -424,6 +445,7 @@ function renderPage(pageKey) {
 
   const footer = `
     <section class="section page-wrap">
+      ${renderPageFlow(window.location.pathname.split("/").pop() || "index.html")}
       <p class="muted">
         Internal discussion draft for executive alignment. Prepared for strategic planning conversation and pilot design.
       </p>
