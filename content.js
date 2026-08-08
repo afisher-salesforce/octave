@@ -36,26 +36,35 @@ window.OCTAVE_PAGES = {
         title: "Executive Stakes by Persona",
         cards: [
           {
+            icon: "📈",
             kicker: "CRO",
             title: "Revenue Quality and Scale",
-            body: "Needs predictable forecast performance and repeatable cross-portfolio expansion to support medium-term ARR commitments."
+            body: "Needs predictable forecast performance and repeatable cross-portfolio expansion to support medium-term ARR commitments.",
+            outcome: "↓ Commit volatility; ↑ cross-portfolio pipeline creation quality"
           },
           {
+            icon: "🧭",
             kicker: "CIO",
             title: "Parallel Transformation",
-            body: "Needs near-term value without waiting for full ERP/CRM consolidation, while preserving enterprise trust and governance."
+            body: "Needs near-term value without waiting for full ERP/CRM consolidation, while preserving enterprise trust and governance.",
+            outcome: "↓ Time-to-value dependency on full-stack transformation"
           },
           {
+            icon: "⚙️",
             kicker: "VP Revenue Operations",
             title: "Operating Rhythm",
-            body: "Needs one system of execution where risk, pipeline movement, and play adoption are visible before forecast meetings."
+            body: "Needs one system of execution where risk, pipeline movement, and play adoption are visible before forecast meetings.",
+            outcome: "↑ Weekly intervention precision across managers and reps"
           },
           {
+            icon: "🎯",
             kicker: "Sales Enablement",
             title: "Methodology Adoption",
-            body: "Needs SPICED to improve deal quality without adding seller admin burden that hurts adoption and data quality."
+            body: "Needs SPICED to improve deal quality without adding seller admin burden that hurts adoption and data quality.",
+            outcome: "↑ SPICED quality signals with less seller overhead"
           }
-        ]
+        ],
+        summaryBanner: "Executive implication: success depends on translating platform capabilities into daily seller and manager behavior, not adding another reporting layer."
       },
       {
         title: "Decision Framing for This Session",
@@ -193,6 +202,30 @@ window.OCTAVE_PAGES = {
         ]
       },
       {
+        title: "What This Means in Practice",
+        cards: [
+          {
+            icon: "🔍",
+            title: "Faster Account Clarity",
+            body: "Reps stop hunting through fragmented systems and start every call with an integrated account view.",
+            outcome: "↓ Pre-call prep friction; ↑ strategic conversation quality"
+          },
+          {
+            icon: "🤝",
+            title: "Higher Executive Credibility",
+            body: "Customer-facing teams show up with stronger context and clearer hypotheses tied to business value.",
+            outcome: "↑ Early trust and relevance in senior-level meetings"
+          },
+          {
+            icon: "📊",
+            title: "Reusable Playbook Signal",
+            body: "Patterns from high-performing account prep become codified and repeatable across teams.",
+            outcome: "↑ Consistency across AEs, managers, and supporting teams"
+          }
+        ],
+        summaryBanner: "Concept to explain: this is not 'better search' — it is a workflow shift from information gathering to value-led engagement."
+      },
+      {
         title: "Persona Impact",
         cards: [
           { kicker: "AE", title: "Pre-Call Confidence", body: "Enters meetings with complete context and clear expansion hypotheses." },
@@ -265,6 +298,30 @@ window.OCTAVE_PAGES = {
           "Sellers edit, validate, and approve drafts rather than writing fields from scratch.",
           "Manager coaching and stage progression are tied to grounded qualification evidence."
         ]
+      },
+      {
+        title: "What This Means in Practice",
+        cards: [
+          {
+            icon: "📝",
+            title: "Methodology Without Seller Tax",
+            body: "SPICED quality improves because completion is assisted, reviewed, and coached instead of manually rebuilt each cycle.",
+            outcome: "↑ SPICED completeness; ↓ admin effort per opportunity"
+          },
+          {
+            icon: "🧠",
+            title: "Better Coaching Moments",
+            body: "Managers get stronger evidence earlier, so interventions focus on risk drivers and action quality.",
+            outcome: "↑ Manager intervention effectiveness"
+          },
+          {
+            icon: "📈",
+            title: "Cleaner Forecast Inputs",
+            body: "Qualification integrity improves pipeline confidence and reduces late-cycle surprises.",
+            outcome: "↓ Forecast noise; ↑ stage confidence integrity"
+          }
+        ],
+        summaryBanner: "Concept to explain: enablement is embedded in execution, so adoption scales through workflow design rather than extra training events."
       },
       {
         title: "Persona Impact",
@@ -341,6 +398,30 @@ window.OCTAVE_PAGES = {
         ]
       },
       {
+        title: "What This Means in Practice",
+        cards: [
+          {
+            icon: "🚨",
+            title: "Earlier Risk Detection",
+            body: "Deal risk appears while options still exist, not after forecast deterioration is already visible to leadership.",
+            outcome: "↑ Recovery opportunities before commit damage"
+          },
+          {
+            icon: "🧭",
+            title: "Action-Oriented Reviews",
+            body: "Pipeline meetings pivot from retrospective updates to forward-looking mitigation decisions.",
+            outcome: "↑ Weekly execution discipline in manager cadences"
+          },
+          {
+            icon: "🔁",
+            title: "Repeatable Forecast Governance",
+            body: "The same risk signals are reviewed across teams, reducing subjective interpretation.",
+            outcome: "↓ Forecast variance caused by inconsistent review standards"
+          }
+        ],
+        summaryBanner: "Concept to explain: better forecasting comes from earlier intervention mechanics, not from reporting more pipeline snapshots."
+      },
+      {
         title: "Persona Impact",
         cards: [
           { kicker: "Manager", title: "Early Intervention", body: "Focuses 1:1s on highest-risk deals with clear action plans and timeline discipline." },
@@ -415,6 +496,30 @@ window.OCTAVE_PAGES = {
         ]
       },
       {
+        title: "What This Means in Practice",
+        cards: [
+          {
+            icon: "🧩",
+            title: "Signal-to-Play Activation",
+            body: "Telemetry no longer sits in analytics; it triggers account-level actions in seller workflow.",
+            outcome: "↑ Precision in expansion targeting"
+          },
+          {
+            icon: "🌐",
+            title: "Cross-Portfolio Visibility",
+            body: "Unified profile context exposes product footprint and whitespace opportunities systematically.",
+            outcome: "↑ Multi-environment opportunity creation"
+          },
+          {
+            icon: "⚡",
+            title: "Faster Expansion Execution",
+            body: "Reps receive prioritized motions with rationale, reducing delay between signal and action.",
+            outcome: "↓ Cycle time from readiness signal to opportunity creation"
+          }
+        ],
+        summaryBanner: "Concept to explain: cross-sell throughput improves when data activation is operationalized into seller tasks, not just surfaced in dashboards."
+      },
+      {
         title: "Persona Impact",
         cards: [
           { kicker: "CRO", title: "Expansion Engine", body: "Converts one-to-two environment adoption thesis into measurable pipeline creation." },
@@ -487,6 +592,30 @@ window.OCTAVE_PAGES = {
           "Cohort comparison shows baseline versus AI-assisted operating model across key KPIs.",
           "Leadership can decide scale based on internal evidence rather than external benchmarks."
         ]
+      },
+      {
+        title: "What This Means in Practice",
+        cards: [
+          {
+            icon: "📉",
+            title: "Cohort-Based Proof",
+            body: "Leaders compare baseline and pilot cohorts using the same KPI definitions and review cadence.",
+            outcome: "↑ Confidence in causal interpretation of pilot results"
+          },
+          {
+            icon: "🧾",
+            title: "Board-Ready Narrative",
+            body: "Operational and financial outcomes are connected in a single scorecard for executive communication.",
+            outcome: "↓ Friction in scale-up decision forums"
+          },
+          {
+            icon: "✅",
+            title: "Governed Scale Decision",
+            body: "Expansion decisions are made with trust controls, data policy, and economics visible at decision time.",
+            outcome: "↑ Responsible scale execution across divisions"
+          }
+        ],
+        summaryBanner: "Concept to explain: this scorecard is the scale gate — it converts pilot performance into an invest / adjust decision with shared evidence."
       },
       {
         title: "Persona Impact",
@@ -580,6 +709,30 @@ window.OCTAVE_PAGES = {
             ]
           }
         ]
+      },
+      {
+        title: "Phase Concepts at a Glance",
+        cards: [
+          {
+            icon: "🚀",
+            title: "Phase 1: Behavior Change First",
+            body: "Prioritize seller and manager workflow improvements that deliver immediate decision velocity.",
+            outcome: "Early value signal for sponsorship confidence"
+          },
+          {
+            icon: "🧠",
+            title: "Phase 2: Signal Activation",
+            body: "Bring telemetry and account context into workflow so growth plays are triggered with precision.",
+            outcome: "Higher quality expansion pipeline creation"
+          },
+          {
+            icon: "📊",
+            title: "Phase 3: Proof and Scale",
+            body: "Instrument scorecards and governance to decide where and how to expand safely.",
+            outcome: "Board-ready scale rationale with trusted evidence"
+          }
+        ],
+        summaryBanner: "Sequencing principle: capability depth follows demonstrated business impact — not the other way around."
       },
       {
         title: "Execution Guardrails",
@@ -683,6 +836,8 @@ window.OCTAVE_PAGES = {
             lastVerifiedAt: "2026-08-08"
           }
         ]
+        ,
+        summaryBanner: "Use this as an executive enablement brief: each role gets one primary path, one success behavior, and one review checkpoint."
       },
       {
         title: "How to Run Enablement in the 90-Day Pilot",

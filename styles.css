@@ -388,7 +388,8 @@ li {
   border: 1px solid #2a4066;
   border-radius: 10px;
   padding: 12px;
-  background: #122034;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+  color: #0e2038;
 }
 
 .card-kicker {
@@ -396,15 +397,62 @@ li {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7ecfff;
+  color: #5f7ea3;
+}
+
+.card-item h3 {
+  color: #0f2745;
 }
 
 .card-item p,
 .cap-card p {
   margin: 0;
-  color: #c7d8f1;
+  color: #1b3150;
   font-size: 0.92rem;
   line-height: 1.35rem;
+}
+
+.cap-card {
+  background: #122034;
+  color: #e7f0ff;
+}
+
+.cap-card p {
+  color: #c7d8f1;
+}
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #102a49;
+  color: #f4fbff;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.card-outcome {
+  margin-top: 10px !important;
+  font-size: 0.76rem !important;
+  border-top: 1px solid #cfdff2;
+  padding-top: 8px;
+  color: #5f4b16 !important;
+  font-weight: 600;
+}
+
+.summary-banner {
+  margin-top: 12px;
+  border: 1px solid #2f5a8a;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, #0f2745 0%, #17395f 100%);
+  color: #eef6ff;
+  font-size: 0.92rem;
+  line-height: 1.4rem;
+  font-weight: 500;
 }
 
 .cap-head {

@@ -352,15 +352,22 @@ function renderPage(pageKey) {
           .map(
             (card) => `
           <article class="card-item">
+            ${card.icon ? `<span class="card-icon" aria-hidden="true">${card.icon}</span>` : ""}
             ${card.kicker ? `<p class="card-kicker">${card.kicker}</p>` : ""}
             <h3>${card.title}</h3>
             <p>${card.body}</p>
+            ${card.outcome ? `<p class="card-outcome">${card.outcome}</p>` : ""}
           </article>
         `
           )
           .join("")}
       </div>
     `;
+  }
+
+  function renderSummaryBanner(summaryBanner) {
+    if (!summaryBanner) return "";
+    return `<div class="summary-banner">${summaryBanner}</div>`;
   }
 
   function renderCapabilityCards(capabilities) {
@@ -481,6 +488,7 @@ function renderPage(pageKey) {
           <h2>${section.title}</h2>
           ${bullets}
           ${renderCards(section.cards)}
+          ${renderSummaryBanner(section.summaryBanner)}
           ${renderImage(section)}
           ${renderCapabilityCards(section.capabilities)}
           ${renderEnablement(section.enablement)}
