@@ -7,6 +7,7 @@ window.OCTAVE_NAV = [
   { title: "4. The Cross-Sell Motion That Found Itself", href: "vignette-4.html", group: "Vignettes" },
   { title: "5. Proving It Worked — The CRO Scorecard", href: "vignette-5.html", group: "Vignettes" },
   { title: "Capability Map", href: "capability-map.html", group: "Architecture" },
+  { title: "Enablement Paths", href: "enablement-paths.html", group: "Architecture" },
   { title: "Salesforce Domain Summary", href: "salesforce-summary.html", group: "Architecture" },
   { title: "External Research", href: "external-research.html", group: "Appendix" },
   { title: "Forward Looking Statement", href: "forward-looking-statement.html", group: "Appendix" }
@@ -209,6 +210,33 @@ window.OCTAVE_PAGES = {
         ]
       },
       {
+        title: "Trailhead Enablement (Public)",
+        enablement: [
+          {
+            title: "Get Started with Agentforce Sales",
+            type: "TRAIL",
+            audience: "Sales Professional",
+            level: "Foundational",
+            timeMinutes: 45,
+            whyItMatters: "Gives account teams a common baseline on Agentforce Sales workflows used in daily customer conversations.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/get-started-with-sales-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Unlock Your Data with Data Cloud",
+            type: "TRAIL",
+            audience: "Architect",
+            level: "Foundational",
+            timeMinutes: 606,
+            whyItMatters: "Prepares IT and RevOps to deliver unified account context that powers the coworker experience.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/unlock-your-data-with-data-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          }
+        ]
+      },
+      {
         title: "Value Driver",
         bullets: [
           "Unified intelligence becomes a daily seller behavior, not a quarterly data project."
@@ -253,6 +281,33 @@ window.OCTAVE_PAGES = {
           { code: "DPA", name: "Predictive AI / Einstein Scoring", domain: "Data and AI", body: "Strengthens stage confidence by connecting qualification completeness to risk signals." },
           { code: "SOP", name: "Opportunity Management", domain: "Sales", body: "Embeds SPICED and stage criteria inside daily opportunity workflow." },
           { code: "SEM", name: "Sales Enablement", domain: "Sales", body: "Operationalizes methodology with coachable structure, not one-time training events." }
+        ]
+      },
+      {
+        title: "Trailhead Enablement (Public)",
+        enablement: [
+          {
+            title: "Dive Into Agentforce Sales for Admins",
+            type: "TRAIL",
+            audience: "Administrator",
+            level: "Foundational",
+            timeMinutes: 130,
+            whyItMatters: "Helps admin and enablement leaders configure and govern workflows that reduce seller data-entry burden.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/dive-into-sales-cloud-for-admins",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Drive Sales with Operational Excellence",
+            type: "TRAIL",
+            audience: "Sales Professional",
+            level: "Intermediate",
+            timeMinutes: 110,
+            whyItMatters: "Improves the operating model for qualification, coaching cadence, and consistent opportunity hygiene.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/drive-sales-with-operational-excellence",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          }
         ]
       },
       {
@@ -303,6 +358,33 @@ window.OCTAVE_PAGES = {
         ]
       },
       {
+        title: "Trailhead Enablement (Public)",
+        enablement: [
+          {
+            title: "Agentforce Sales: Drive Pipeline Efficiency",
+            type: "TRAIL",
+            audience: "Sales Professional",
+            level: "Intermediate",
+            timeMinutes: 371,
+            whyItMatters: "Builds practical forecasting and pipeline management capabilities tied to AI-assisted execution.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/agentforce-sales-drive-pipeline-efficiency-with-analytics-and-ai",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Plan and Track Sales Goals with Sales Operations",
+            type: "TRAIL",
+            audience: "Executive",
+            level: "Foundational",
+            timeMinutes: 40,
+            whyItMatters: "Supports disciplined forecast operating cadence, goal tracking, and executive review consistency.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/plan-and-track-sales-goals-with-sales-operations",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          }
+        ]
+      },
+      {
         title: "Value Driver",
         bullets: [
           "Risk transparency improves forecast quality only when signals are embedded in weekly manager execution."
@@ -350,6 +432,33 @@ window.OCTAVE_PAGES = {
         ]
       },
       {
+        title: "Trailhead Enablement (Public)",
+        enablement: [
+          {
+            title: "Unlock Your Data with Data Cloud",
+            type: "TRAIL",
+            audience: "Architect",
+            level: "Foundational",
+            timeMinutes: 606,
+            whyItMatters: "Strengthens readiness for telemetry-driven activation and account-level signal orchestration.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/unlock-your-data-with-data-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Agentforce Sales: Build the Revenue Engine for Your Business",
+            type: "TRAIL",
+            audience: "Sales Professional",
+            level: "Intermediate",
+            timeMinutes: 1618,
+            whyItMatters: "Connects account planning, pipeline creation, and execution mechanics needed for repeatable cross-sell motion.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/agentforce-sales-build-the-revenue-engine-for-your-business",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          }
+        ]
+      },
+      {
         title: "Value Driver",
         bullets: [
           "Cross-sell becomes systematic when account signals trigger action in seller workflow at the right moment."
@@ -394,6 +503,33 @@ window.OCTAVE_PAGES = {
           { code: "ABI", name: "Embedded BI & Dashboards", domain: "Analytics and Reporting", body: "Delivers role-specific executive scorecards directly inside operating workflow." },
           { code: "APC", name: "Tableau Pulse / Proactive Insights", domain: "Analytics and Reporting", body: "Pushes material KPI changes to leadership before formal review cycles." },
           { code: "PGV", name: "Data Governance & Privacy", domain: "Platform and Governance", body: "Ensures executive reporting trust through consistent access, quality, and controls." }
+        ]
+      },
+      {
+        title: "Trailhead Enablement (Public)",
+        enablement: [
+          {
+            title: "Agentforce Sales: Drive Pipeline Efficiency",
+            type: "TRAIL",
+            audience: "Executive",
+            level: "Intermediate",
+            timeMinutes: 371,
+            whyItMatters: "Supports KPI selection, forecasting rigor, and AI-assisted pipeline governance at leadership level.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/agentforce-sales-drive-pipeline-efficiency-with-analytics-and-ai",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Plan and Track Sales Goals with Sales Operations",
+            type: "TRAIL",
+            audience: "RevOps",
+            level: "Foundational",
+            timeMinutes: 40,
+            whyItMatters: "Provides a concise framework for operational scorecards, target setting, and review discipline.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/plan-and-track-sales-goals-with-sales-operations",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          }
         ]
       },
       {
@@ -451,6 +587,109 @@ window.OCTAVE_PAGES = {
           "Sequence by business value first; integration depth second.",
           "Preserve transparent measurement with defined baseline and control cohorts.",
           "Keep trust and governance controls explicit in every phase gate."
+        ]
+      },
+      {
+        title: "Phased Trailhead Learning Pathway (Public)",
+        enablement: [
+          {
+            title: "Phase 1 Enablement | Get Started with Agentforce Sales",
+            type: "TRAIL",
+            audience: "Sales Professional",
+            level: "Foundational",
+            timeMinutes: 45,
+            whyItMatters: "Creates a common operating baseline for seller workflow, opportunity progression, and prompt-driven assistance.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/get-started-with-sales-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Phase 2 Enablement | Unlock Your Data with Data Cloud",
+            type: "TRAIL",
+            audience: "Architect",
+            level: "Foundational",
+            timeMinutes: 606,
+            whyItMatters: "Prepares data and platform teams to activate account-level signals required for cross-sell orchestration.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/unlock-your-data-with-data-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Phase 3 Enablement | Agentforce Sales: Drive Pipeline Efficiency",
+            type: "TRAIL",
+            audience: "Executive",
+            level: "Intermediate",
+            timeMinutes: 371,
+            whyItMatters: "Equips leadership and RevOps to run evidence-based KPI governance and scale decisions.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/agentforce-sales-drive-pipeline-efficiency-with-analytics-and-ai",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          }
+        ]
+      }
+    ]
+  },
+  enablement: {
+    title: "Enablement Paths | Trailhead Resources",
+    showHero: false,
+    headline: "Curated Trailhead learning paths mapped to Octave's pilot sequence and executive personas.",
+    meta: ["Source: Trailhead MCP", "Scope: Public learning resources", "Refresh cadence: Monthly or before steering reviews"],
+    sections: [
+      {
+        title: "Role-Based Enablement Paths",
+        enablement: [
+          {
+            title: "Executive Sponsor Path | Plan and Track Sales Goals with Sales Operations",
+            type: "TRAIL",
+            audience: "Executive",
+            level: "Foundational",
+            timeMinutes: 40,
+            whyItMatters: "Supports CRO/CIO alignment on KPI frameworks, goals, and operating cadence for pilot oversight.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/plan-and-track-sales-goals-with-sales-operations",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "RevOps Path | Agentforce Sales: Drive Pipeline Efficiency",
+            type: "TRAIL",
+            audience: "Sales Professional",
+            level: "Intermediate",
+            timeMinutes: 371,
+            whyItMatters: "Builds forecasting, analytics, and AI-assisted pipeline management capabilities required for weekly governance.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/agentforce-sales-drive-pipeline-efficiency-with-analytics-and-ai",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Sales Admin Path | Dive Into Agentforce Sales for Admins",
+            type: "TRAIL",
+            audience: "Administrator",
+            level: "Foundational",
+            timeMinutes: 130,
+            whyItMatters: "Enables administrators to configure reliable process controls, coaching surfaces, and user adoption mechanics.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/dive-into-sales-cloud-for-admins",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Architecture Path | Unlock Your Data with Data Cloud",
+            type: "TRAIL",
+            audience: "Architect",
+            level: "Foundational",
+            timeMinutes: 606,
+            whyItMatters: "Prepares architecture teams for identity, harmonization, and activation decisions behind the pilot's signal model.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/unlock-your-data-with-data-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          }
+        ]
+      },
+      {
+        title: "How to Run Enablement in the 90-Day Pilot",
+        bullets: [
+          "Assign one primary path per persona (CRO/CIO, RevOps, Sales Admin, Architect) and complete baseline learning by week 2.",
+          "Use weeks 3-6 to apply concepts inside live pipeline reviews, SPICED workflow coaching, and cross-sell signal activation.",
+          "In weeks 7-12, use scorecard reviews to identify advanced-path gaps and define scale-up enablement for additional divisions."
         ]
       }
     ]
@@ -546,6 +785,55 @@ window.OCTAVE_PAGES = {
               { code: "DEL", name: "Einstein Trust Layer", highlight: false },
               { code: "PMD", name: "Multi-Org / Subsidiary Architecture", highlight: false }
             ]
+          }
+        ]
+      },
+      {
+        title: "Trailhead Resources by Domain (Public)",
+        enablement: [
+          {
+            title: "Data & AI | Unlock Your Data with Data Cloud",
+            type: "TRAIL",
+            audience: "Architect",
+            level: "Foundational",
+            timeMinutes: 606,
+            whyItMatters: "Grounds data harmonization, profile unification, and activation patterns needed for Octave's cross-sell motion.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/unlock-your-data-with-data-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Sales | Get Started with Agentforce Sales",
+            type: "TRAIL",
+            audience: "Sales Professional",
+            level: "Foundational",
+            timeMinutes: 45,
+            whyItMatters: "Builds shared fluency on opportunity workflow, seller actions, and assistant-led execution loops.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/get-started-with-sales-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Sales Operations | Transform Your Business with Sales Operations",
+            type: "TRAIL",
+            audience: "Executive",
+            level: "Foundational",
+            timeMinutes: 40,
+            whyItMatters: "Supports durable operating cadence design and KPI governance across leadership and RevOps forums.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/transform-your-business-with-sales-operations",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
+          },
+          {
+            title: "Revenue Architecture | Configure Agentforce Revenue Management",
+            type: "TRAIL",
+            audience: "Architect",
+            level: "Intermediate",
+            timeMinutes: 865,
+            whyItMatters: "Provides sequencing context for quote-to-revenue expansion once the initial sales pilot proves value.",
+            url: "https://trailhead.salesforce.com/en/content/learn/trails/configure-revenue-cloud",
+            source: "trailhead-mcp",
+            lastVerifiedAt: "2026-08-08"
           }
         ]
       },

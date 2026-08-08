@@ -69,6 +69,7 @@ function pageHrefForKey(pageKey) {
     v4: "vignette-4.html",
     v5: "vignette-5.html",
     capability: "capability-map.html",
+    enablement: "enablement-paths.html",
     salesforce: "salesforce-summary.html",
     fls: "forward-looking-statement.html"
   };
@@ -124,6 +125,17 @@ function buildCapabilityIndex() {
             pageHref,
             href: pageHref
           });
+        });
+      });
+      (section.enablement || []).forEach((rec) => {
+        entries.push({
+          code: "LEARN",
+          name: rec.title || "",
+          description: rec.whyItMatters || "",
+          location: `${pageTitle} — ${section.title}`,
+          pageTitle,
+          pageHref,
+          href: pageHref
         });
       });
     });
@@ -323,6 +335,15 @@ function renderPage(pageKey) {
     </header>
   `;
 
+  function formatLearningTime(minutes) {
+    if (!minutes || Number.isNaN(minutes)) return "";
+    if (minutes >= 60) {
+      const hours = Math.round((minutes / 60) * 10) / 10;
+      return `${hours}h`;
+    }
+    return `${minutes}m`;
+  }
+
   function renderCards(cards) {
     if (!cards || !cards.length) return "";
     return `
@@ -416,6 +437,33 @@ function renderPage(pageKey) {
     `;
   }
 
+  function renderEnablement(enablement) {
+    if (!enablement || !enablement.length) return "";
+    return `
+      <div class="enablement-grid">
+        ${enablement
+          .map(
+            (rec) => `
+          <a class="enablement-card" href="${rec.url}" target="_blank" rel="noreferrer">
+            <div class="enablement-head">
+              <span class="enablement-type">${rec.type}</span>
+              <h3>${rec.title}</h3>
+            </div>
+            <div class="enablement-meta">
+              <span>${rec.audience}</span>
+              <span>${rec.level}</span>
+              <span>${formatLearningTime(rec.timeMinutes)}</span>
+            </div>
+            <p>${rec.whyItMatters}</p>
+            <p class="enablement-verified">Trailhead MCP verified: ${rec.lastVerifiedAt}</p>
+          </a>
+        `
+          )
+          .join("")}
+      </div>
+    `;
+  }
+
   const sections = page.sections
     .map((section) => {
       const chips = section.chips && section.chips.length
@@ -435,6 +483,7 @@ function renderPage(pageKey) {
           ${renderCards(section.cards)}
           ${renderImage(section)}
           ${renderCapabilityCards(section.capabilities)}
+          ${renderEnablement(section.enablement)}
           ${renderPhases(section.phases)}
           ${renderDomainGroups(section.domainGroups)}
           ${chips}
